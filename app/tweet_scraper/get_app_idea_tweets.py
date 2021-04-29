@@ -1,8 +1,6 @@
 from twitter import Twitter, OAuth, TwitterHTTPError
-import twitterapidetails as tad
 import pymongo
 import urllib.parse
-import config
 import dns
 from datetime import datetime
 import os
