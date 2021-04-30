@@ -5,13 +5,11 @@ import dns
 from datetime import datetime
 import os
 
-
 OAUTH_TOKEN=os.environ.get("OAUTH_TOKEN")
 OAUTH_SECRET=os.environ.get('OAUTH_SECRET')
 CONSUMER_KEY=os.environ.get('CONSUMER_KEY')
 CONSUMER_SECRET=os.environ.get('CONSUMER_SECRET')
 MONGO_PW=os.environ.get('MONGO_PW')
-
 
 def search_tweets(q, count=5000):
     t = Twitter(auth=OAuth(OAUTH_TOKEN, OAUTH_SECRET, CONSUMER_KEY, CONSUMER_SECRET))
@@ -50,7 +48,6 @@ def extract_tweet_data(query_results):
             else:
                 existing_tweet_count+=1
     print("{} tweets added and {} tweets already in database".format(new_tweet_count, existing_tweet_count))
-
 
 if __name__ == "__main__":
     results = search_tweets('"There should be an app" OR "I wish there was an app" OR "Someone should build an app"')
