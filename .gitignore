@@ -1,2 +1,3 @@
 misc_ignore/
 venv/
+!**/__pycache__/
