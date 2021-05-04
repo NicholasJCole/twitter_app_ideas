@@ -1,9 +1,7 @@
 from flask import Flask
 import pymongo
-import tweet_scraper.get_app_idea_tweets as gait
+import app.tweet_scraper.get_app_idea_tweets as gait
 import os
-
-MONGO_PW=os.environ.get('MONGO_PW')
 
 app = Flask(__name__)
 
