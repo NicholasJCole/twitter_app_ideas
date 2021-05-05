@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Tweets List</title>
+    </head>
+    <body>
+        {% for tweet in tweets %}
+		<ul>
+			<li>{{tweet['tweet_content']}}</li>
+		</ul>
+	{% endfor %}
+    </body>
+</html>
