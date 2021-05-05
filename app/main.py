@@ -10,5 +10,5 @@ app = Flask(__name__)
 @app.route("/index")
 def index():
     db = gait.connect_mdb()
-    tweets = db.tweet_data.find({}).limit(10)
+    tweets = db.tweet_data.find({})
     return render_template('index.html', tweets=tweets)
