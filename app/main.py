@@ -12,3 +12,9 @@ def index():
     db = gait.connect_mdb()
     tweets = db.tweet_data.find({})
     return render_template('index.html', tweets=tweets)
+
+@app.route("/page") #make pagination for tweets
+def paginate():
+    db = gait.connect_mdb()
+    tweets = db.tweet_data.find({})
+    return render_template('index.html', tweets=tweets)
