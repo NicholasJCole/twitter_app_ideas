@@ -10,11 +10,19 @@ app = Flask(__name__)
 @app.route("/index")
 def index():
     db = gait.connect_mdb()
-    tweets = db.tweet_data.find({})
+    tweets = db.tweet_data.find().sort("tweet_create_time", -1)
     return render_template('index.html', tweets=tweets)
 
-@app.route("/page") #make pagination for tweets
+#make pagination for tweets
+@app.route("/page")
 def paginate():
     db = gait.connect_mdb()
     tweets = db.tweet_data.find({})
+    return render_template('index.html', tweets=tweets)
+
+#page for tweets with most favorites
+@app.route("/popular")
+def popular_tweets():
+    db = gait.connect_mdb()
+    tweets = db.tweet_data.find().sort("tweet_favorite_count", -1)
     return render_template('index.html', tweets=tweets)
