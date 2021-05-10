@@ -33,7 +33,7 @@ def extract_tweet_data(query_results):
                 tweet_prof_image = status['user']['profile_image_url']
                 tweet_prof_name = status['user']['screen_name']
                 tweet_actual_name = status['user']['name']
-                tweet_create_time = status['created_at']
+                tweet_create_time = datetime.strptime(status['created_at'],'%a %b %d %H:%M:%S +0000 %Y')
                 tweet_favorite_count = status['favorite_count']
                 tweet_location = status['user']['location']
                 tweet_hash_tags = status['entities']['hashtags']
