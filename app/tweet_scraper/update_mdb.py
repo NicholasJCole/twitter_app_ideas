@@ -2,6 +2,7 @@ import tweepy
 import os
 import app.tweet_scraper.get_app_idea_tweets as gait
 import sys
+from datetime import datetime
 
 OAUTH_TOKEN=os.environ.get("OAUTH_TOKEN")
 OAUTH_SECRET=os.environ.get('OAUTH_SECRET')
@@ -74,7 +75,7 @@ def create_updated_dict(tweet):
 
 if __name__ == "__main__":
     tweets = retrieve_all_mdb()
-    db = connect_mdb()
+    db = gait.connect_mdb()
     count = -1
     # rate limited out at 893
     for tweet in tweets[892:933]:
