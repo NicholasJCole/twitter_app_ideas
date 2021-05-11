@@ -1,6 +1,6 @@
 from flask import Flask
 import pymongo
-import tweet_scraper.get_app_idea_tweets as gait
+import app.tweet_scraper.get_app_idea_tweets as gait
 import os
 from flask import render_template
 
