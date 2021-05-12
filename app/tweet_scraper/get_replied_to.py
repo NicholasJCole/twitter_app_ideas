@@ -23,7 +23,9 @@ def retrieve_select_mdb():
 
 def add_replied_tweet(tweets, limit):
     count = 0
-    for tweet in tweets[0:limit]:
+    db = gait.connect_mdb()
+    min_limit = min(tweets.count(), limit)
+    for tweet in tweets[0:min_limit]:
        try:
             in_reply_to_tweet = get_tweet(tweet['in_reply_to_status_id_str'])
             db.tweet_data.update_one({"tweet_id": tweet['tweet_id']}, {"$set": {"in_reply_to_content": in_reply_to_tweet['full_text']}})
