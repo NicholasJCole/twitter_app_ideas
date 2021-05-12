@@ -4,9 +4,7 @@
     {% for tweet in tweets %}
 		<ul>
 			<li>{{tweet['tweet_content']}}
-				<br> Create date: {{tweet['tweet_create_time']}}
-				<br> Favorites: {{tweet['tweet_favorite_count']}}
-				<br> <a href="https://www.twitter.com/anyuser/status/{{tweet['tweet_id']}}">Link to tweet</a>
+				<br> Created: {{tweet['tweet_create_time']}} | Favorites: {{tweet['tweet_favorite_count']}} | <a href="https://www.twitter.com/anyuser/status/{{tweet['tweet_id']}}" target="_blank" rel="noopener noreferrer">Link to tweet</a>
 			</li>
 		</ul>
 	{% endfor %}
