@@ -59,5 +59,5 @@ def extract_tweet_data(query_results):
     print("{} tweets added and {} tweets already in database".format(new_tweet_count, existing_tweet_count))
 
 if __name__ == "__main__":
-    results = search_tweets('"There should be an app" OR "wish there was an app" OR "Someone should build an app" OR "is there an app" OR "need an app that"')
+    results = search_tweets('"There should be an app" OR "wish there was an app" OR "Someone should build an app" OR "is there an app" OR "need an app that" OR "we need an app for" OR "we need an app that"')
     extract_tweet_data(results)
