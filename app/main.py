@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/index")
 def index():
     db = gait.connect_mdb()
-    tweets = db.tweet_data.find().sort("tweet_create_time", -1)
+    tweets = db.tweet_data.find().limit(1000).sort("tweet_create_time", -1)
     return render_template('index.html', tweets=tweets)
 
 #make pagination for tweets
